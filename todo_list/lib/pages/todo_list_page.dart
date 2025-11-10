@@ -11,40 +11,23 @@ class TodoListPage extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+          child: Row(
             children: [
-              TextField(
-                controller: emailController,
-                decoration: InputDecoration(
-                  labelText: 'E-mail',
-                  border: OutlineInputBorder(),
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Adicione uma tarefa',
+                    hintText: 'Ex: Estudar Flutter',
+                  ),
                 ),
-                onChanged: onChanged,
-                onSubmitted: ,
               ),
-              ElevatedButton(
-                onPressed: login,
-                child: Text('Entrar'),
-              ),
+              SizedBox(width: 8),
+              ElevatedButton(onPressed: () {}, child: Text('+')),
             ],
           ),
         ),
       ),
     );
-  }
-
-  void login() {
-    String text = emailController.text;
-    print(text);
-    emailController.text = "";
-  }
-
-  void onChanged(String text) {
-    print(text);
-  }
-
-  void onSubmitted(String text) {
-    print(text);
   }
 }
